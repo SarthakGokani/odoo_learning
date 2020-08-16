@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+
+
+        <record id="view_myemployee_myemployee_tree" model="ir.ui.view">
+            <field name="name">myemployee.myemployee.tree</field>
+            <field name="model">myemployee.myemployee</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="dob"/>
+                    <field name="contact_no"/>
+                    <field name="email"/>
+                    <field name="gender"/>
+                    <field name="job_position"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_myemployee_myemployee_form" model="ir.ui.view">
+            <field name="name">myemployee.myemployee.form</field>
+            <field name="model">myemployee.myemployee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="photos" widget="image" class="oe_avatar"/>
+                            <group>
+                                <field name="first_name"/>
+                                <field name="last_name"/>
+                                <field name="dob"/>
+                                <field name="contact_no"/>
+                                <field name="date_of_joining"/>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="wages_type"/>
+                                <field name="wages_or_salary"/>
+                                <field name="gender"/>
+                                <field name="hobbies"/>
+                                <field name="job_position"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_myemployee_myemployee" model="ir.actions.act_window">
+            <field name="name">My Employee</field>
+            <field name="res_model">myemployee.myemployee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_myemployee_root" sequence="10" name="My Employee"/>
+
+        <menuitem id="menu_myemployee_myemployee" action="action_myemployee_myemployee" parent="menu_myemployee_root"/>
+
+    </data>
+</odoo>
